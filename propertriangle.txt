@@ -1,0 +1,187 @@
+import java.util.*;
+
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        int n= sc.nextInt();
+        for (int i=1;i<=n;i++) {
+            for(int sp=1;sp<=n-i;sp++){
+                System.out.print("   ");
+            }
+
+            for(int j=1;j<=(2*i-1);j++)   {
+
+                System.out.print("  *" );
+            }
+            System.out.println();
+        }
+
+
+
+
+
+    }
+}
+
+_________________________________________________________________________________________________________________________
+get num as 10 print as -9 get num as -10 print as 11:
+import java.util.*;
+public class number {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int a= sc.nextInt();
+
+        System.out.println(~a);
+            //int b= (a+1)*(-1);
+           // System.out.println(b);
+        }
+
+    }
+_________________________________________________________________________________________________________________________
+zoho coin question:
+import java.util.*;
+import java.lang.*;
+public class Main {
+    int fact;
+    public static int fact(int n){
+        if(n==0)
+
+
+        return 1;
+        return n*fact(n-1);
+    }
+    public static double count_heads(int n,int r){
+        double res =fact(n)/fact(n-r)*fact(r);
+        res=res/Math.pow(2,n);
+
+        return res;
+
+    }
+    public static void main(String args[]){
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      int r = sc.nextInt();
+      System.out.println(count_heads(n,r));
+
+
+    }
+}
+_________________________________________________________________________________________________________________________
+access specifier:
+class Teacher {
+    public String name;
+    
+    public void teach() {
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student {
+    public String studentName;
+
+    public void study() {
+        System.out.println(studentName + " is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher();
+        teacher.name = "Mr.Sri";  // Accessing public variable
+        teacher.teach();  // Accessing public method
+
+        Student student = new Student();
+        student.studentName = "Ram";  // Accessing public variable
+        student.study();  // Accessing public method
+    }
+}
+________________________________________________________________________________________________________________________
+class Teacher {
+    private String name;  // This cannot be accessed from outside the class
+    
+    private void teach() {
+        System.out.println(name + " is teaching.");
+    }
+    
+    public void setName(String name) {
+        this.name = name;  // Setting the value using a public method
+    }
+
+    public void getName() {
+        System.out.println(name);  // Getting the value using a public method
+    }
+}
+
+class Student {
+    private String studentName;
+    
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void study() {
+        System.out.println(studentName + " is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher();
+        teacher.setName("Mr. Sri");  // Accessing private variable through a setter method
+        teacher.getName();  // Accessing private variable through a getter method
+
+        Student student = new Student();
+        student.setStudentName("Ram");  // Accessing private variable through a setter method
+        student.study();  // Accessing public method
+    }
+}
+_________________________________________________________________________________________________________________________
+class Teacher {
+    protected String name;
+
+    protected void teach() {
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student extends Teacher {
+    public void study() {
+        name = "Mr. Sri";  // Accessing protected variable from superclass
+        teach();  // Accessing protected method from superclass
+        System.out.println("Student is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.study();
+    }
+}
+__________________________________________________________________________________________________________________________
+class Teacher {
+    String name;  // Default access modifier
+    
+    void teach() {  // Default access modifier
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student {
+    public void study() {
+        Teacher teacher = new Teacher();
+        teacher.name = "Mr. Sri";  // Accessing default variable within the same package
+        teacher.teach();  // Accessing default method within the same package
+        System.out.println("Student is studying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.study();
+    }
+}
+__________________________________________________________________________________________________________________________________________
+
